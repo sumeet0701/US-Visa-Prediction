@@ -1,0 +1,20 @@
+training_pipeline_config:
+  pipeline: VISA 
+  artifact_dir: artifacts
+
+
+data_ingestion_config:
+  dataset_download_url: "url"
+  raw_data_dir: raw_data
+  ingested_dir: ingested_data
+  ingested_train_dir: train
+  ingested_test_dir: test
+
+data_validation_config:
+  schema_dir: config
+  schema_file_dir: schema.yaml # this file is data_validation report in yaml format
+  
+
+data_transformation_config:
+
+model_training_config:
