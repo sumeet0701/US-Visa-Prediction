@@ -4,7 +4,7 @@ from visa.constant import *
 from visa.logger import logging
 from visa.entity.config_entity import DataValidationConfig
 from visa.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact
-from visa.config.configuration import Configuartion
+from visa.config.configuration import Configuration
 from visa.exception import CustomException
 from visa.utils.utils import read_yaml_file
 from visa.entity.raw_data_validation import IngestedDataValidation

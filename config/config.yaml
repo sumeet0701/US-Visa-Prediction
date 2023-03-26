@@ -17,5 +17,11 @@ data_validation_config:
   
 
 data_transformation_config:
+  tranformed_dir: transformed_data
+  transformed_train_dir: train
+  transformed_test_dir: test
+  preprocessing_dir: preprocessed
+  feature_engineering_object_file_name: feat_eng.pkl
+  preprocessed_object_file_name: preprocessed.pkl
 
 model_training_config:
