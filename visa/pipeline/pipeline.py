@@ -4,7 +4,8 @@ from visa.exception import CustomException
 from visa.entity.config_entity import *
 from visa.utils.utils import read_ymal_file
 from visa.components.data_ingestion import DataIngestion
-from visa.entity.artifact_entity import DataIngestionArtifact
+from visa.components.data_validation import DataValidation
+from visa.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact
 from visa.config.configuration import Configuration
 
 import sys, os
@@ -25,10 +26,23 @@ class Pipeline():
         
         except Exception as e:
             raise CustomException(e,sys) from e
+        
+    def start_validation(self,
+                         data_ingestion_artifact: DataIngestionArtifact )-> DataValidationArtifact:
+        try:
+            data_validation = DataValidation(
+                data_validation_config= self.get_data_validation_config(),
+                data_ingestion_artifact=data_ingestion_artifact
+            )
+            return data_validation.intitate_data_validation()
+        except Exception as e:
+            raise CustomException(e,sys) from e
+
             
     
     def run_pipeline(self):
         try:
             data_ingestion_artifact =self.start_data_ingestion()
+            data_validation_artifact = self.start_data_validation()
         except Exception as e:
             raise CustomException(e,sys) from e

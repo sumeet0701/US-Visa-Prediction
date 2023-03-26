@@ -12,7 +12,7 @@ TrainingPipelineConfig = namedtuple('TrainingPipelineConfig',[
                                      ])
 
                                      
-dataValidationConfig =   namedtuple("DataValidationConfig",
+DataValidationConfig =   namedtuple("DataValidationConfig",
                                  ["schema_file_dir"])
 
 
