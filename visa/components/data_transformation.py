@@ -4,22 +4,13 @@ import numpy as np
 from visa.exception import CustomException
 from visa.logger import logging
 from visa.entity.config_entity import DataTransformationConfig
-from visa.entity.artifact_entity import DataIngestionArtifact
-from visa.entity.artifact_entity import  DataValidationArtifact
-from visa.entity.artifact_entity import  DataTransformationArtifact
+from visa.entity.artifact_entity import DataIngestionArtifact, DataValidationArtifact, DataTransformationArtifact
 from sklearn.compose import ColumnTransformer
-from visa.utils.utils import read_yaml_file
-from visa .utils.utils import load_data
-from visa.utils.utils import save_numpy_array_data
-from visa.utils.utils import save_object
-
+from visa.utils.utils import read_yaml_file, load_data, save_numpy_array_data, save_object
 from visa.constant import *
 from sklearn.pipeline import Pipeline
 from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler
-from sklearn.preprocessing import  PowerTransformer
-from sklearn.preprocessing import  OrdinalEncoder
-from sklearn.preprocessing import  OneHotEncoder
+from sklearn.preprocessing import StandardScaler, OrdinalEncoder, OneHotEncoder, PowerTransformer
 from imblearn.combine import SMOTEENN
 
 class DataTransformation:

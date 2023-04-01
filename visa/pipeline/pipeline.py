@@ -1,7 +1,7 @@
 from collections import namedtuple
 from datetime import datetime
 import uuid
-from visa.config.configuration import Configuration
+from visa.config.Configuartion import Configuartion
 from visa.logger import logging
 from visa.exception import CustomException
 from threading import Thread
@@ -22,7 +22,7 @@ import pandas as pd
 
 class Pipeline():
 
-    def __init__(self, config: Configuration = Configuration()) -> None:
+    def __init__(self, config: Configuartion = Configuartion()) -> None:
         try:
             self.config = config
         except Exception as e:

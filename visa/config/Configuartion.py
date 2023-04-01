@@ -6,7 +6,7 @@ from visa.entity.config_entity import *
 from visa.utils.utils import read_yaml_file # helper function
 
 
-class Configuration:
+class Configuartion:
 
     def __init__(self,
         config_file_path:str =CONFIG_FILE_PATH,
@@ -72,9 +72,10 @@ class Configuration:
             data_validation_config = self.config_info[DATA_VALIDATION_CONFIG_KEY]
 
 
-            schema_file_path = os.path.join(ROOT_DIR,
-            data_validation_config[DATA_VALIDATION_SCHEMA_DIR_KEY],
-            data_validation_config[DATA_VALIDATION_SCHEMA_FILE_NAME_KEY]
+            schema_file_path = os.path.join(
+                ROOT_DIR,
+                data_validation_config[DATA_VALIDATION_SCHEMA_DIR_KEY],
+                data_validation_config[DATA_VALIDATION_SCHEMA_FILE_NAME_KEY]
             )
 
             data_validation_config = DataValidationConfig(
