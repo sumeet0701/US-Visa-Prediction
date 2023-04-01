@@ -25,3 +25,6 @@ data_transformation_config:
 model_training_config:
   trained_model_dir: trained_model
   model_file_name: model.pkl
+
+    
+
