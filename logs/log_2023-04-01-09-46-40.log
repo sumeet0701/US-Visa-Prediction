@@ -1,0 +1,15 @@
+[2023-04-01 09:46:40,987] numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+[2023-04-01 09:46:44,141] root - INFO - Training pipleine config: TrainingPipelineConfig(artifact_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\visa\\artifact')
+[2023-04-01 09:46:44,141] root - ERROR - 
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\pipeline\pipeline.py] at 
+                        try block line number: [67] execption block line number: [73]
+                        error message: [
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\pipeline\pipeline.py] at 
+                        try block line number: [33] execption block line number: [36]
+                        error message: [
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\config\configuration.py] at 
+                        try block line number: [26] execption block line number: [61]
+                        error message: [join() argument must be str, bytes, or os.PathLike object, not 'function']]]

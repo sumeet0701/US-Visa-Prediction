@@ -9,10 +9,13 @@ from typing import List
 
 from multiprocessing import Process
 from visa.entity.artifact_entity import DataIngestionArtifact
-from visa.entity.artifact_entity import DataValidationArtifact, DataTransformationArtifact
+from visa.entity.artifact_entity import DataValidationArtifact
+from visa.entity.artifact_entity import  DataTransformationArtifact
+from visa.entity.artifact_entity import ModelTrainerArtifact
 from visa.components.data_ingestion import DataIngestion
 from visa.components.data_validation import DataValidation
 from visa.components.data_transformation import DataTransformation
+from visa.components.model_trainer import ModelTrainer
 import os, sys
 from collections import namedtuple
 from datetime import datetime
@@ -55,6 +58,16 @@ class Pipeline():
             )
 
             return data_transfromation.initiate_data_transformation()
+        except Exception as e:
+            raise CustomException(e, sys) from e
+    
+
+    def start_model_trainer(self, data_transformation_artifact: DataTransformationArtifact) -> ModelTrainerArtifact:
+        try:
+            model_trainer = ModelTrainer(model_trainer_config=self.config.get_model_trainer_config(),
+                                         data_transformation_artifact=data_transformation_artifact
+                                         )
+            return model_trainer.initiate_model_trainer()
         except Exception as e:
             raise CustomException(e, sys) from e
 

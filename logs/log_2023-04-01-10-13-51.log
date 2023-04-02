@@ -1,0 +1,35 @@
+[2023-04-01 10:13:52,430] numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+[2023-04-01 10:13:55,166] root - INFO - Training pipleine config: TrainingPipelineConfig(artifact_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact')
+[2023-04-01 10:13:55,166] root - INFO - Data Ingestion config: DataIngestionConfig(dataset_download_url='https://raw.githubusercontent.com/Shivan118/Main-Branching/main/Visadataset.csv', raw_data_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-13-51\\raw_data', ingested_train_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-13-51\\ingested_data\\train', ingested_test_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-13-51\\ingested_data\\test')
+[2023-04-01 10:13:55,168] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-04-01 10:13:55,170] root - INFO - Downloading file from :[https://raw.githubusercontent.com/Shivan118/Main-Branching/main/Visadataset.csv] into :[C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-13-51\raw_data\Visadataset.csv]
+[2023-04-01 10:13:57,173] root - INFO - File :[C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-13-51\raw_data\Visadataset.csv] has been downloaded successfully.
+[2023-04-01 10:13:57,173] root - INFO - Reading csv file: [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-13-51\raw_data\Visadataset.csv]
+[2023-04-01 10:13:57,247] root - INFO - Splitting data into train and test
+[2023-04-01 10:13:57,253] root - INFO - Exporting training dataset to file: [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-13-51\ingested_data\train\Visadataset.csv]
+[2023-04-01 10:13:57,345] root - INFO - Exporting test dataset to file: [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-13-51\ingested_data\test\Visadataset.csv]
+[2023-04-01 10:13:57,375] root - INFO - Data Ingestion artifact:[DataIngestionArtifact(train_file_path='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-13-51\\ingested_data\\train\\Visadataset.csv', test_file_path='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-13-51\\ingested_data\\test\\Visadataset.csv', is_ingested=True, message='Data ingestion completed successfully.')]
+[2023-04-01 10:13:57,377] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-04-01 10:13:57,389] root - INFO - Validation Process Started
+[2023-04-01 10:13:57,784] root - INFO - Train_set status|is Train filename validated?: True|is train columns validated?: True|is train column name validated?: True|whole missing columns?True
+[2023-04-01 10:13:57,785] root - INFO - Test_set status|is Test filename validated?: Trueis test col numbers validated?: True|is test column names validated? True| whole missing columns? True
+[2023-04-01 10:13:57,785] root - INFO - Validation Process Completed
+[2023-04-01 10:13:57,785] root - INFO - Data validation artifact: DataValidationArtifact(schema_file_path='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\config\\schema.yaml', is_validated=True, message='Data validation performed')
+[2023-04-01 10:13:57,786] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Validation log completed.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+[2023-04-01 10:13:57,786] root - ERROR - 
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\pipeline\pipeline.py] at 
+                        try block line number: [69] execption block line number: [73]
+                        error message: [
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\pipeline\pipeline.py] at 
+                        try block line number: [52] execption block line number: [59]
+                        error message: [
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\config\Configuartion.py] at 
+                        try block line number: [110] execption block line number: [132]
+                        error message: ['transformed_dir']]]

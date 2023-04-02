@@ -1,0 +1,26 @@
+[2023-04-01 10:03:13,049] numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+[2023-04-01 10:03:15,813] root - INFO - Training pipleine config: TrainingPipelineConfig(artifact_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact')
+[2023-04-01 10:03:15,813] root - INFO - Data Ingestion config: DataIngestionConfig(dataset_download_url='https://raw.githubusercontent.com/Shivan118/Main-Branching/main/Visadataset.csv', raw_data_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-03-12\\raw_data', ingested_train_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-03-12\\ingested_data\\train', ingested_test_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-03-12\\ingested_data\\test')
+[2023-04-01 10:03:15,815] root - INFO - >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Data Ingestion log started.<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< 
+
+
+[2023-04-01 10:03:15,816] root - INFO - Downloading file from :[https://raw.githubusercontent.com/Shivan118/Main-Branching/main/Visadataset.csv] into :[C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-03-12\raw_data\Visadataset.csv]
+[2023-04-01 10:03:21,685] root - INFO - File :[C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-03-12\raw_data\Visadataset.csv] has been downloaded successfully.
+[2023-04-01 10:03:21,686] root - INFO - Reading csv file: [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-03-12\raw_data\Visadataset.csv]
+[2023-04-01 10:03:21,762] root - INFO - Splitting data into train and test
+[2023-04-01 10:03:21,770] root - INFO - Exporting training dataset to file: [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-03-12\ingested_data\train\Visadataset.csv]
+[2023-04-01 10:03:21,869] root - INFO - Exporting test dataset to file: [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\us_visa\artifact\data_ingestion\2023-04-01-10-03-12\ingested_data\test\Visadataset.csv]
+[2023-04-01 10:03:21,895] root - INFO - Data Ingestion artifact:[DataIngestionArtifact(train_file_path='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-03-12\\ingested_data\\train\\Visadataset.csv', test_file_path='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-10-03-12\\ingested_data\\test\\Visadataset.csv', is_ingested=True, message='Data ingestion completed successfully.')]
+[2023-04-01 10:03:21,897] root - ERROR - 
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\pipeline\pipeline.py] at 
+                        try block line number: [68] execption block line number: [73]
+                        error message: [
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\pipeline\pipeline.py] at 
+                        try block line number: [40] execption block line number: [44]
+                        error message: [
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\config\Configuartion.py] at 
+                        try block line number: [77] execption block line number: [85]
+                        error message: ['schema_file_name']]]

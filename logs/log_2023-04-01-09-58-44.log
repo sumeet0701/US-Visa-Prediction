@@ -1,0 +1,13 @@
+[2023-04-01 09:58:44,952] numexpr.utils - INFO - NumExpr defaulting to 8 threads.
+[2023-04-01 09:58:47,657] root - INFO - Training pipleine config: TrainingPipelineConfig(artifact_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact')
+[2023-04-01 09:58:47,657] root - INFO - Data Ingestion config: DataIngestionConfig(dataset_download_url='https://raw.githubusercontent.com/Shivan118/Main-Branching/main/Visadataset.csv', raw_data_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-09-58-44\\raw_data', ingested_train_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-09-58-44\\ingested_data\\train', ingested_test_dir='C:\\Users\\Sumeet Maheshwari\\Desktop\\end to end project\\US Visa Prediction\\US Visa Prediction\\us_visa\\artifact\\data_ingestion\\2023-04-01-09-58-44\\ingested_data\\test')
+[2023-04-01 09:58:47,660] root - INFO - -------------------------------Data Ingestion Logging Started-------------------
+[2023-04-01 09:58:47,660] root - ERROR - 
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\pipeline\pipeline.py] at 
+                        try block line number: [67] execption block line number: [73]
+                        error message: [
+                        error occured in script: 
+                        [C:\Users\Sumeet Maheshwari\Desktop\end to end project\US Visa Prediction\US Visa Prediction\visa\pipeline\pipeline.py] at 
+                        try block line number: [34] execption block line number: [36]
+                        error message: ['DataIngestion' object has no attribute 'initiate_data_ingestion']]
