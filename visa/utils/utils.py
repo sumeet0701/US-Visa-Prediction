@@ -1,7 +1,7 @@
 import yaml,sys
 import numpy as np
 import os, sys
-import numpy as np
+
 import dill
 import pandas as pd
 from visa.constant import *
@@ -80,5 +80,27 @@ def load_data(file_path: str, schema_file_path: str) -> pd.DataFrame:
             raise Exception(error_message)
         return dataframe
 
+    except Exception as e:
+        raise CustomException(e, sys) from e
+    
+def load_numpy_array_data(file_path: str) -> np.array:
+    """
+    load numpy array data from file
+    file_path: str location of file to load
+    return: np.array data loaded
+    """
+    try:
+        with open(file_path, 'rb') as file_obj:
+            return np.load(file_obj, allow_pickle=True)
+    except Exception as e:
+        raise CustomException(e, sys) from e
+    
+def load_object(file_path:str):
+    """
+    file_path: str
+    """
+    try:
+        with open(file_path, "rb") as file_obj:
+            return dill.load(file_obj)
     except Exception as e:
         raise CustomException(e, sys) from e

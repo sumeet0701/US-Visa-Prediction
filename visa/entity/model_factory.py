@@ -2,13 +2,13 @@ import importlib
 from pyexpat import model
 import numpy as np
 import yaml
-from us_visa.exception import CustomException
+from visa.exception import CustomException
 import os
 import sys
 
 from collections import namedtuple
 from typing import List
-from us_visa.logger import logging
+from visa.logger import logging
 from sklearn.metrics import accuracy_score, f1_score
 
 GRID_SEARCH_KEY = 'grid_search'
@@ -18,49 +18,32 @@ PARAM_KEY = 'params'
 MODEL_SELECTION_KEY = 'model_selection'
 SEARCH_PARAM_GRID_KEY = "search_param_grid"
 
-InitializedModelDetail = namedtuple("InitializedModelDetail",[
-    "model_serial_number", 
-    "model", 
-    "param_grid_search", 
-    "model_name"
-    ])
+# model_serial_number we need to discused
 
-GridSearchedBestModel = namedtuple("GridSearchedBestModel", [
-    "model_serial_number",
-    "model",
-    "best_model",
-    "best_parameters",
-    "best_score",
-    ])
+InitializedModelDetail = namedtuple("InitializedModelDetail",
+                                    ["model_serial_number", "model", "param_grid_search", "model_name"])
 
-BestModel = namedtuple("BestModel", [
-    "model_serial_number",
-    "model",
-    "best_model",
-    "best_parameters",
-    "best_score"
-    ])
+GridSearchedBestModel = namedtuple("GridSearchedBestModel", ["model_serial_number",
+                                                             "model",
+                                                             "best_model",
+                                                             "best_parameters",
+                                                             "best_score",
+                                                             ])
 
-MetricInfoArtifact = namedtuple("MetricInfoArtifact",[
-    "model_name", 
-    "model_object", 
-    "train_f1", 
-    "test_f1", 
-    "train_accuracy",
-    "test_accuracy", 
-    "model_accuracy", 
-    "index_number"
-    ])
+BestModel = namedtuple("BestModel", ["model_serial_number",
+                                     "model",
+                                     "best_model",
+                                     "best_parameters",
+                                     "best_score", ])
+
+MetricInfoArtifact = namedtuple("MetricInfoArtifact",
+                                ["model_name", "model_object", "train_f1", "test_f1", "train_accuracy",
+                                 "test_accuracy", "model_accuracy", "index_number"])
 
 
 # can be used in case of classification model
-def evaluate_classification_model(
-        model_list: list, 
-        X_train: np.ndarray, 
-        y_train: np.ndarray, 
-        X_test: np.ndarray,
-        y_test: np.ndarray, 
-        base_accuracy: float = 0.6) -> MetricInfoArtifact:
+def evaluate_classification_model(model_list: list, X_train: np.ndarray, y_train: np.ndarray, X_test: np.ndarray,
+                                  y_test: np.ndarray, base_accuracy: float = 0.6) -> MetricInfoArtifact:
     """
     Description:
     This function compare multiple classification models and returns best model
@@ -80,7 +63,7 @@ def evaluate_classification_model(
     try:
 
         index_number = 0
-        metric_info_artifact = None
+        metric_info_artifact = None # Model accuracy is none becuase right now we didn't have any model where we can check accuracy
         for model in model_list:
             model_name = str(model)  # getting model name based on model object
             logging.info(f"{'>>' * 30}Started evaluating model: [{type(model).__name__}] {'<<' * 30}")
@@ -92,6 +75,7 @@ def evaluate_classification_model(
             # Calculating r squared score on training and testing dataset
             train_acc = accuracy_score(y_train, y_train_pred)
             test_acc = accuracy_score(y_test, y_test_pred)
+
 
             # Calculating mean squared error on training and testing dataset
             train_f1 = f1_score(y_train, y_train_pred)
@@ -187,7 +171,7 @@ class ModelFactory:
             self.models_initialization_config: dict = dict(self.config[MODEL_SELECTION_KEY])
 
             self.initialized_model_list = None
-            self.grid_searched_best_model_list = None
+            self.grid_searched_best_model_list = None 
 
         except Exception as e:
             raise CustomException(e, sys) from e
@@ -204,7 +188,8 @@ class ModelFactory:
             return instance_ref
         except Exception as e:
             raise CustomException(e, sys) from e
-
+        
+    # Read complete parameter from modelyaml file
     @staticmethod
     def read_params(config_path: str) -> dict:
         try:
@@ -214,11 +199,13 @@ class ModelFactory:
         except Exception as e:
             raise CustomException(e, sys) from e
 
+
+
+    # we defidning the class to call our model file randome forest and  KNN
     @staticmethod
     def class_for_name(module_name: str, class_name: str):
         try:
             # load the module, will raise ImportError if module cannot be loaded
-            # importlib is a library used for getting list of all models if we have more than one model 
             module = importlib.import_module(module_name)
             # get the class, will raise AttributeError if class cannot be found
             logging.info(f"Executing command: from {module} import {class_name}")
