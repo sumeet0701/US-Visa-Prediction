@@ -16,6 +16,7 @@ This model is to check if Visa get approved or not based on the given dataset. T
 
 ## 🛠 Skills
 ●	Python Programming
+
     ○	OOPS
     ○	Modularity
 
